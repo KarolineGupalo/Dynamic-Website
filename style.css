@@ -1,0 +1,566 @@
+﻿body
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 76px;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 3vw;
+    color: #967BB6;
+    text-align: center;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/*Hier wurde, rein für "Design"-Zwecke, ein Farbverlauf verwendet.*/
+header {
+    display: flex;
+    height: 200px;
+    background: linear-gradient(to right, #553c9a, #b393d3);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1
+{
+    color: white;
+    margin: 0;
+}
+
+.p-menu1 {
+    height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/*Hier wurden zwei Boxen nebeneinander erstellt. Einer wurde mit einem Introduction-Text gefüllt, der andere mit einem Bild*/
+.container_column-2 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+}
+
+.column-2 {
+    flex: 0 0 45%;
+    float: none;
+    width: 45%;
+    padding: 40px;
+    height: auto;
+    margin: 15px 15px 15px 15px;
+    background-color: #b393d3;
+    line-height: 2;
+}
+
+    .column-2 h2 {
+        text-align: left;
+        color: white;
+        font-size: 4vw;
+    }
+    .column-2 p {
+        color: white;
+        font-size: 1.25vw;
+    }
+
+.large-profile {
+    background: url('Labrador_Violet.png') center / cover no-repeat;
+}
+
+/*Die Progress Circles sind eine Mischung aus bereits vorhandenen Styles, die auf https://www.w3schools.com/ und anderen hilfreichen Websites gefunden wurden.
+    Diese Progress Circles wurden dann farblich und stilistisch so angepasst, dass sie vom Stil her zu dieser Website passen.
+*/
+.progress-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+/*Der schwierigste Teil war hier, die Progress Circles nicht nur für den normalen PC-Screen, sondern auch für die kleineren Screens anschaulich darzustellen.
+    Das hat sehr viel Herumprobieren gefordert und nicht einmal ChatGPT konnte hier groß weiterhelfen. :(
+    Mit viel Zeit und Tipps ausprobieren (z.B. unter https://stackoverflow.com/) hat es dann endlich funktioniert.
+    Das Ausgangsproblem war, dass bei jeder anderen Screengröße die Progress Circles untereinander und über den ganzen Screen verteilt dargestellt wurden.
+*/   
+label {
+    --w: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-grid;
+    place-content: center;
+    width: var(--w); 
+    aspect-ratio: 1 / 1;
+    position: relative;
+    margin: 10px;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px;
+    margin-bottom: 70px;
+}
+
+progress[value] {
+    --background: conic-gradient(var(--progress-color) var(--p), lightgrey 0);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--background);
+    -webkit-mask: radial-gradient(#0000 59%,#000 60% 70%,#0000 71%)
+}
+
+label::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+    progress[value]::-webkit-progress-bar {
+        background: var(--background);
+    }
+
+    progress[value]::-webkit-progress-value {
+        background: #0000;
+    }
+
+    progress[value]::-moz-progress-bar {
+        background: #0000;
+    }
+
+/* Ursprünglich wollte ich kein traditionelles Hamburger-Menü mit Balken gestalten, sondern mit einem Icon.
+        Hat leider nicht so geklappt, wie ich es mir vorgestellt habe. Hier wäre es vermutlich cool, wenn man Adobe Illustrator zur Verfügung hätte, dann könnte man wahrscheinlich Icons einbauen...
+        So habe ich eine Standardvorlage von https://www.w3schools.com/ verwendet und entsprechend angepasst, damit es zum Stil der Website passt.
+    */
+.hamburger1 {
+    height: 45px;
+    margin: 10px auto;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    z-index: 120;
+}
+
+    .hamburger1 div {
+        background-color: rgb(61, 61, 61);
+        position: relative;
+        width: 40px;
+        height: 5px;
+        margin-top: 7px;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .hamburger1 span {
+        display: block;
+        background-color: rgb(61, 61, 61);
+        position: relative;
+        width: 40px;
+        height: 5px;
+        margin-top: 7px;
+        transition: all 0.2s ease-in-out;
+    }
+
+#toggle1:checked + .hamburger1 .top {
+    transform: rotate(-45deg) translate(-7px, 7px);
+}
+
+#toggle1:checked + .hamburger1 .meat {
+    opacity: 0;
+}
+
+#toggle1:checked + .hamburger1 .bottom {
+    transform: rotate(45deg) translate(-7px, -7px);
+}
+
+    /*Lesson learned: Manchmal erspart man sich viele verbrannte Nerven, wenn man height auf auto stellt...*/
+    #toggle1:checked ~ .menu1 {
+        height: auto;
+    }
+
+
+.menu1 {
+    width: 100%;
+    background: linear-gradient(to right, #553c9a, #b393d3);
+    margin: 0;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: 1fr repeat(4, 0.5fr);
+    grid-row-gap: 25px;
+    padding: 0;
+    list-style: none;
+    clear: both;
+    width: auto;
+    text-align: center;
+    height: 0px;
+    overflow: hidden;
+    transition: height .4s ease;
+    z-index: 120;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+    .menu1 a:first-child {
+        margin-top: 40px;
+    }
+
+    .menu1 a:last-child {
+        margin-bottom: 40px;
+    }
+
+    .menu1 a{
+        color: white;
+    }
+
+.link1 {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    font: 700 20px 'Arial', sans-serif;
+}
+
+    .link1:hover {
+        background-color: #fff;
+        color: rgb(61, 61, 61);
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+.card-wrapper {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 300px;
+    height: 500px;
+    margin: 10px;
+}
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+.container {
+    padding: 2px 16px;
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+/*Der Chat wurde ín eine Box eingebaut, damit er etwas schöner dargestellt wird. Außerdem wurde in den blank fields ein placeholder Text eingefügt, damit klar ist, dass man Name und Nachricht eingeben muss.*/
+#chat-messages {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background-color: #f3eaff;
+    margin-bottom: 50px;
+}
+
+#chat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    #chat-form input[type=text] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f9f4ff; 
+    }
+
+    #chat-form input[type=submit] {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #7d5ba6;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        #chat-form input[type=submit]:hover {
+            background-color: #68477c;
+        }
+
+#page-footer {
+    background-color: #7d5ba6; 
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 -4px 8px 0 rgba(0,0,0,0.2);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+    #page-footer p {
+        margin: 0;
+        font-size: 16px;
+    }
+
+
+
+  
+
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 60px; 
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    header {
+        height: 220px;
+    }
+
+    .container_column-2, .column-2 {
+        width: 90%;
+        padding: 0px 20px 20px 20px; 
+        margin: 10px auto;
+    }
+
+        .column-2 h1, .column-2 p {
+            font-size: 16px;
+        }
+
+    .card {
+        width: 30%;
+        margin: 20px;
+        height: auto;
+    }
+
+    .hamburger1 {
+        height: 50px;
+        margin: 15px auto;
+    }
+
+        .hamburger1 div {
+            width: 40px;
+            height: 6px;
+            margin-top: 8px;
+        }
+
+    .link1 {
+        font-size: 20px;
+        padding: 15px 0;
+    }
+
+    .menu1 a:first-child,
+    .menu1 a:last-child {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .progress-container {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    label::after {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #chat-messages, #chat-form {
+        max-width: 80%;
+    }
+
+    .link1, .container {
+        padding: 15px;
+    }
+}
+@media (max-width: 800px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    header {
+        height: 180px;
+    }
+
+    .container_column-2, .column-2 {
+        width: 100%; 
+        padding: 0px 20px 20px 20px; 
+        margin: 10px auto; 
+    }
+
+        .column-2 h1, .column-2 p {
+            font-size: 14px; 
+        }
+
+    .card {
+        width: 45%;
+        margin: 10px;
+        height: auto; 
+    }
+
+    .hamburger1 {
+        height: 40px; 
+        margin: 10px auto;
+    }
+
+        .hamburger1 div {
+            width: 35px; 
+            height: 5px;
+            margin-top: 6px;
+        }
+
+    .link1 {
+        font-size: 18px; 
+        padding: 10px 0;
+    }
+
+    .menu1 a:first-child,
+    .menu1 a:last-child {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .progress-container {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    label::after {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    #chat-messages, #chat-form {
+        max-width: 90%;
+    }
+
+    .link1, .container {
+        padding: 10px;
+    }
+}
+
+/*400px war das schwierigste einzustellen, hat aber dann geklappt. Es wäre fast an den Progress Circles gescheitert.*/
+@media (max-width: 400px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    header {
+        height: 150px;
+    }
+
+    .container_column-2, .column-2 {
+        width: 100%; 
+        padding: 15px; 
+        margin: 0px 0; 
+    }
+
+        .column-2 h1, .column-2 p {
+            font-size: 10%;
+        }
+/*Auch hier: height auf auto zu stellen löst viele Probleme...*/
+    .card {
+        width: 100%;
+        margin: 10px 0;
+        height: auto;
+    }
+
+    .hamburger1 {
+        height: 30px;
+        margin: 5px auto;
+    }
+
+        .hamburger1 div {
+            width: 30px; 
+            height: 4px; 
+            margin-top: 5px;
+        }
+
+    #toggle1:checked + .hamburger1 .top {
+        margin-top: 18px;
+    }
+
+    .link1 {
+        font-size: 16px;
+        padding: 8px 0;
+    }
+
+    .menu1 a:first-child {
+        margin-top: 20px;
+    }
+
+    .menu1 a:last-child {
+        margin-bottom: 20px;
+    }
+
+    .progress-container {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    progress[value] {
+        --background: conic-gradient(var(--progress-color) var(--p), lightgrey 0);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+        background: var(--background);
+        -webkit-mask: radial-gradient(#0000 59%,#000 60% 70%,#0000 71%)
+    }
+
+    label::after {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    #chat-messages, #chat-form {
+        max-width: 100%;
+    }
+
+    .link1, .container {
+        padding: 5px; 
+    }
+}
