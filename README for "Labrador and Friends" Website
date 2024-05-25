@@ -1,0 +1,11 @@
+README for "Labrador and Friends" Website
+Overview
+"Labrador and Friends" is a website featuring various themed sections, each showcasing a different aspect of Labrador dogs through images and accompanying text. The site is visually styled with a focus on a clean and modern aesthetic, using a combination of CSS for layout and styling.
+
+Project Files
+index.html: The main HTML file containing the structure of the website.
+style.css: The CSS file used for styling the website, ensuring a cohesive and appealing design.
+Images: Various images including labrador.png, Labrador_Violet.png, crypto.png, poem.png, rights.png, and therapist.png.
+
+Setting Up the Project:
+Place all the project files (index.html, style.css, and the images) in the same directory.
