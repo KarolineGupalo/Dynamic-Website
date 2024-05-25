@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="author" content="Karoline Gupalo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Alle Bilder wurden von DALL-E von ChatGPT erstellt. -->
+<body>
+
+    <header>
+        <h1>A good girl's website</h1>
+    </header>
+
+    <div class="p-menu1">
+        <nav id="navbar" class="navigation">
+            <input type="checkbox" id="toggle1">
+            <label class="hamburger1" for="toggle1">
+                <span class="top"></span>
+                <span class="meat"></span>
+                <span class="bottom"></span>
+            </label>
+
+            <nav class="menu1">
+                <a class="link1" href="#Introduction">My Life as Doggo</a>
+                <a class="link1" href="#Skills">My super awesome Skills</a>
+                <a class="link1" href="#Projects">Games</a>
+                <a class="link1" href="#Projects">Things I do</a>
+                <a class="link1" href="#Chat">Contact the Doggo</a>
+            </nav>
+        </nav>
+    </div>
+
+    <section id="Introduction">
+        <div class="container_column-2">
+            <div class="column-2">
+                <h2>About me</h2>
+                <p>Hi! I'm Ciri the brown labrador. I am almost 3 years old but still called a 'baby' by my pawrents. Basically I live for snacks and treats and I try to get a taste of everything my hoomans eat. To this point you'd probably expect me to talk about my job, but the fact is, that I am stay-at-home dog, who doesn't even protect the house too much, since I just love everyone. Sometimes I bark at things that are new to me, like snow men or so.</p>
+                <p>Follow me on instagram for even more adventures with me and my hoomans!</p>
+            </div>
+
+            <div class="column-2 large-profile">
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- die Farbe und der Fortschritt in den Progress Circles wird direkt im HTML Dokument eingestellt -->
+    <section id="Skills">
+        <h2>My Skills</h2>
+        <div class="progress-container">
+            <label data-label="Sit">
+                <progress max="100" value="25" style="--p: 25%; --progress-color: #553c9a"></progress>
+            </label>
+            <label data-label="Lay Down">
+                <progress max="100" value="50" style="--p: 50%; --progress-color: #8360b3"></progress>
+            </label>
+            <label data-label="Giving Paw">
+                <progress max="100" value="73" style="--p: 73%; --progress-color: #9e85c2"></progress>
+            </label>
+            <label data-label="Fetching Balls">
+                <progress max="100" value="100" style="--p: 100%; --progress-color: #b393d3"></progress>
+            </label>
+        </div>
+    </section>
+
+    <section id="Projects">
+        <h2>My Projects and Passions</h2>
+
+        <div class="card-wrapper">
+            <div class="card">
+                <img src="poem.png" alt="Poem" style="width:100%">
+                <div class="container">
+                    <h4><b>My poems</b></h4>
+                    <p>Dog does a dig, dog does a lick. Please spend your dime not on a lime, get dog a treat, otherwise you cheat.</p>
+                    <a class="link1" href="https://post.bark.co/fun/cards-from-dogs/">More poems</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="crypto.png" alt="Crypto" style="width:100%">
+                <div class="container">
+                    <h4><b>All things Crypto</b></h4>
+                    <p>How the doge coin made me to one of the fortune 500 dogs worldwide. Read more about crypto and how to becomre rich in here!</p>
+                    <a class="link1" href="https://dogecoin.com/">All things crypto</a>
+
+                </div>
+            </div>
+            <div class="card">
+                <img src="therapist.png" alt="Therapist" style="width:100%">
+                <div class="container">
+                    <h4><b>Mental Health</b></h4>
+                    <p>As a certified therapy dog I spend a lot of time giving therapy to hoomans in challenging life situations. Look after your mental health. Contact me!</p>
+                    <a class="link1" href="https://therapiehunde-salzburg.at/">Contact the doggo</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="rights.png" alt="Rights" style="width:100%">
+                <div class="container">
+                    <h4><b>Dog Rights</b></h4>
+                    <p>Labrador rights are dog rights! That's why I stand up for all dog's rights and won't stop believing in a bright future for all dogs.</p>
+                    <a class="link1" href="https://www.peta.org/about-peta/why-peta/why-animal-rights/">Donate now!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Chat">
+        <h2>The Doge Chat</h2>
+
+        <div id="chat-messages">
+            <form action="#" id="chat-form">
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="text" name="message" placeholder="Write a message" required>
+                <input type="submit">
+            </form>
+        </div>
+    </section>
+
+    <footer id="page-footer">
+        <p>© 2023 Ciri the Good Girl. All rights reserved.</p>
+    </footer>
+
+    <script src="https://web.its.fh-salzburg.ac.at/static/chat.js"></script>
+
+</body>
+</html>
